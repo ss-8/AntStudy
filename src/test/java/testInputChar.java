@@ -1,3 +1,4 @@
+
 import java.awt.AWTException;
 import java.awt.Robot;
 import java.awt.event.KeyEvent;
@@ -18,8 +19,10 @@ public class testInputChar {
 			e1.printStackTrace();
 		}
 		List<String> commandList = new ArrayList<String>();
-		commandList.add("sadfasdfasdfasdfa");
-		commandList.add("asdfasdfasdfasdfasdfasgergaervgsaer");
+		commandList.add("asdfasdfasdf");
+		commandList.add("asdfasdf");
+		commandList.add("cd /export/Instances/cvweb/server1/");
+		commandList.add("tail -f logs/catalina.out");
 		for (String command : commandList) {
 			try {
 				Thread.sleep(2000);
@@ -226,6 +229,15 @@ public class testInputChar {
 				break;
 			case '.':
 				keycode = KeyEvent.VK_PERIOD;
+				break;
+			case '/':
+				keycode = KeyEvent.VK_SLASH;
+				break;
+			case '-':
+				keycode = KeyEvent.VK_MINUS;
+				break;
+			case '_':
+				keycode = KeyEvent.VK_MINUS;
 				break;
 			case ' ':
 				keycode = KeyEvent.VK_SPACE;

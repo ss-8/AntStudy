@@ -13,7 +13,45 @@ import java.io.UnsupportedEncodingException;
 import org.junit.Test;
 
 public class testReadTxt {
+	@Test
+	public void test1() {
+		File f=new File("E:\\temp\\黄图标注\\高危_主图_cv标注用\\porn_gaowei_zhutu_full.txt");
+		String encoding = "utf-8";
 
+		try {
+			InputStreamReader readtypes = new InputStreamReader(new FileInputStream(f), encoding);
+			BufferedReader bufferedReader = new BufferedReader(readtypes);
+			BufferedWriter writer_pop = new BufferedWriter(new FileWriter(new File("E:\\temp\\黄图标注\\高危_主图_cv标注用\\porn_gaowei_zhutu_pop.txt")));
+			BufferedWriter writer_self = new BufferedWriter(new FileWriter(new File("E:\\temp\\黄图标注\\高危_主图_cv标注用\\porn_gaowei_zhutu_self.txt")));
+			String lineTxt = null;
+			int rowNum = 0;
+			int accordRow = 1;
+			int pop=0;
+			int self=0;
+			while ((lineTxt = bufferedReader.readLine()) != null) {
+				rowNum++;
+				String[] s=lineTxt.split(",");
+				if(s[6].length()>=10)
+					writer_pop.append(lineTxt+"\r\n");
+				else
+					writer_self.append(lineTxt+"\r\n");
+			}
+			writer_pop.close();
+			writer_self.close();
+			System.out.println(rowNum);
+			System.out.println(pop);
+			System.out.println(self);
+		} catch (UnsupportedEncodingException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 	@Test
 	public void test() {
 		File f=new File("E:\\temp\\黄图标注\\高危_主图_cv标注用\\sexy_gaowei_zhutu_full_pop.txt");
