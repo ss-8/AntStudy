@@ -15,14 +15,15 @@ import org.junit.Test;
 public class testReadTxt {
 	@Test
 	public void test1() {
-		File f=new File("E:\\temp\\黄图标注\\高危_主图_cv标注用\\porn_gaowei_zhutu_full.txt");
+		String path="E:\\mytemp\\黄图标注\\zhutu_relabel\\";
+		File f=new File(path+"sexy_gaowei_zhutu_relabel.txt");
 		String encoding = "utf-8";
 
 		try {
 			InputStreamReader readtypes = new InputStreamReader(new FileInputStream(f), encoding);
 			BufferedReader bufferedReader = new BufferedReader(readtypes);
-			BufferedWriter writer_pop = new BufferedWriter(new FileWriter(new File("E:\\temp\\黄图标注\\高危_主图_cv标注用\\porn_gaowei_zhutu_pop.txt")));
-			BufferedWriter writer_self = new BufferedWriter(new FileWriter(new File("E:\\temp\\黄图标注\\高危_主图_cv标注用\\porn_gaowei_zhutu_self.txt")));
+			BufferedWriter writer_pop = new BufferedWriter(new FileWriter(new File(path+"sexy_gaowei_zhutu_relabel_pop.txt")));
+			BufferedWriter writer_self = new BufferedWriter(new FileWriter(new File(path+"sexy_gaowei_zhutu_relabel_self.txt")));
 			String lineTxt = null;
 			int rowNum = 0;
 			int accordRow = 1;
