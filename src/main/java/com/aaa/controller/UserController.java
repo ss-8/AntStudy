@@ -5,6 +5,7 @@ import javax.annotation.Resource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -22,7 +23,7 @@ public class UserController {
 		return dest;
 	}
 	
-	@RequestMapping(value = "Add/", method = RequestMethod.POST)
+	@PostMapping(value = "Add/")
 	public String addUser(@RequestParam String username, @RequestParam String password, Model model) {
 		String id = "";
 		id = userService.addUser(username, password);
