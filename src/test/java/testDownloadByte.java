@@ -25,7 +25,7 @@ public class testDownloadByte {
 			//获取自己数组  
 			byte[] buffer = new byte[1024];    
 			int len = 0;    
-			ByteArrayOutputStream bos = new ByteArrayOutputStream();    
+			ByteArrayOutputStream bos = new ByteArrayOutputStream();
 			while((len = inputStream.read(buffer)) != -1) {    
 			    bos.write(buffer, 0, len);    
 			}    
@@ -44,6 +44,10 @@ public class testDownloadByte {
 	public void test1(){
 		String urlStr="https://img14.360buyimg.com/n8/jfs/t1207/147/604748602/124635/2f027c4b/5535e1abN0a6b329a.jpg";
 		System.out.println(urlStr.lastIndexOf("."));
+	}
+	
+	public void rfile(){
+		
 	}
 
 }

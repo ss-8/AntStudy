@@ -7,18 +7,18 @@ public class testThreadStop {
 
 	@Test
 	public void test() {
-		List<Thread> tList=new ArrayList<Thread>();
-		for(int i=0;i>10;i++){
-		Thread t=new Thread(new TS());
-		t.start();
-		tList.add(t);
+		List<Thread> tList = new ArrayList<Thread>();
+		for (int i = 0; i > 10; i++) {
+			Thread t = new Thread(new TS());
+			t.start();
+			tList.add(t);
 		}
-		for(Thread t:tList){
-			if(t.getState()==Thread.State.TERMINATED){
+		for (Thread t : tList) {
+			if (t.getState() == Thread.State.TERMINATED) {
 				tList.remove(t);
 				System.out.println("aa");
 			}
-				
+
 		}
 	}
 
