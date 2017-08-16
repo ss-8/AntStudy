@@ -7,6 +7,7 @@ public class testLog4j2 {
 	@Test
 	public void test() {
 		log.info("Not yet implemented");
+		log.error("ss");
 	}
 
 }
