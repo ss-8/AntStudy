@@ -3,7 +3,7 @@ package com.aaa.json;
 public class AccessMessage {
 	private String token;
 	private String ip;
-	private Integer type;// 1通过验证0未通过
+	private Long type;// 1通过验证0未通过
 	
 	
 
@@ -11,7 +11,7 @@ public class AccessMessage {
 		super();
 	}
 
-	public AccessMessage(String token, String ip, Integer type) {
+	public AccessMessage(String token, String ip, Long type) {
 		this.token = token;
 		this.ip = ip;
 		this.type = type;
@@ -33,11 +33,11 @@ public class AccessMessage {
 		this.ip = ip;
 	}
 
-	public Integer getType() {
+	public Long getType() {
 		return type;
 	}
 
-	public void setType(Integer type) {
+	public void setType(Long type) {
 		this.type = type;
 	}
 }

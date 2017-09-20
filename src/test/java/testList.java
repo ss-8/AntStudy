@@ -8,11 +8,12 @@ public class testList {
 	@Test
 	public void test() {
 		List<String> strList=new ArrayList<String>();
-		for(int i=0;i<10;i++){
-			strList.add("aa"+i);
-		}
-		for(String s:strList){
-			System.out.println(s);
+		strList.add("aaa");
+		strList.add("aaa");
+		strList.add("bbb");
+		System.out.println(strList.size());
+		for(String str:strList){
+			System.out.println(str);
 		}
 		strList.clear();
 		System.out.println(strList.size());

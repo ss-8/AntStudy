@@ -15,7 +15,7 @@ public class testJson {
 
 	@Test
 	public void test() {
-		AccessMessage am=new AccessMessage("aaaa","bbbb",1);
+		AccessMessage am=new AccessMessage("aaaa","bbbb",1L);
 		ObjectMapper mapper = new ObjectMapper();
 		String json="";
 		try {
@@ -32,6 +32,7 @@ public class testJson {
 		}
 		System.out.println(json);
 		AccessMessage am1=new AccessMessage();
+		json="{\"token\":\"aaaa\",\"ip\":\"bbbb\",\"type\":1}";
 		try {
 			am1=mapper.readValue(json, AccessMessage.class);
 		} catch (JsonParseException e) {
@@ -44,7 +45,9 @@ public class testJson {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println(am1.getToken());
+		System.out.println(am1.getType());
+		System.out.println(am1.getType()==null);
+		System.out.println(json);
 		
 	}
 
